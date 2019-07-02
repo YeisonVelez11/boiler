@@ -7,7 +7,7 @@ import { NotFoundComponent,
 
 const appRoutes: Routes = [
 	{path: '', component: NotFoundComponent},
-	{path: 'home/:niu', component: HomeComponent},
+	{path: 'home', component: HomeComponent},
 	{path: '**', component: NotFoundComponent},
 ];
 

@@ -14,6 +14,8 @@ import { fechanormal } from '../pipes/pipe-fecha-normal';
 import { ellipsis } from '../pipes/pipe-ellipsis';
 import { pipekeys } from '../pipes/pipe-keys';
 import { safepipe } from '../pipes/pipe-safe';
+
+
 import { NotFoundComponent,
          HomeComponent 
         } from '../pages/index.paginas';

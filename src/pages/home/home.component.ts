@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import  {SERVICES } from '../../config/webservices';
 import  {MESSAGES } from '../../config/messages';
 import { ServicesProvider } from '../../providers/services';
-import { ActivatedRoute } from '@angular/router';
+import * as M from "materialize-css/dist/js/materialize";
+
+//import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'home',
@@ -15,25 +17,32 @@ export class HomeComponent implements OnInit {
   aDataUser:any;
   constructor(
 
-  		public ServicesProvider:ServicesProvider,
-  		private route: ActivatedRoute
+  		public ServicesProvider:ServicesProvider/*,
+  		private route: ActivatedRoute*/
 
   	) { }
 
   ngOnInit() {
-     this.route.params.subscribe(params => {
+     /*this.route.params.subscribe(params => {
      	console.log(params);
       this.idNiu=params['niu'];
       this.parametros.append("NIU",parseInt(this.idNiu));
       this.fn_getbyNiu();
     });
+*/
+   setTimeout(()=>{
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    console.log(elems);
+    var instances = M.FloatingActionButton.init(elems);
+
+   },1000)
 
 
   }
 
 
   fn_getbyNiu(){
-	this.ServicesProvider.preloaderOn();
+	/*this.ServicesProvider.preloaderOn();
     this.ServicesProvider.post(SERVICES.GETBYNIU,  this.parametros,true).then(data=>{
     	console.log(data);
     	this.aDataUser=data[0];
@@ -43,7 +52,7 @@ export class HomeComponent implements OnInit {
       this.ServicesProvider.preloaderOff();
       this.ServicesProvider.generarPopupGenerico("Error", "Ha ocurrido un problema, por favor intentalo de nuevo",null);
     });
-	  
+	  */
 
   }
 
