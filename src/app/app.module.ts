@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule,NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { routing, appRoutingProviders } from './app-routing.module'
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
@@ -17,8 +17,10 @@ import { safepipe } from '../pipes/pipe-safe';
 
 
 import { NotFoundComponent,
-         HomeComponent 
+         HomeComponent,
+         ModalComponent 
         } from '../pages/index.paginas';
+
 //import * as M from "materialize-css/dist/js/materialize";
 @NgModule({
   declarations: [
@@ -31,15 +33,19 @@ import { NotFoundComponent,
     fechanormal,
     ellipsis,
     pipekeys,
-    safepipe
+    safepipe,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
+    //NgbModule,
+    NgbModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-	HttpModule,
+	  HttpModule,
 
-    NgbModule,
+
+
     routing
   ],
   providers: [
@@ -48,6 +54,10 @@ import { NotFoundComponent,
   ServicesProvider
 
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ModalComponent
+  ]
+
 })
 export class AppModule { }

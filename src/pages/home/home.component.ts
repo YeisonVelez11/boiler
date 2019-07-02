@@ -40,7 +40,10 @@ export class HomeComponent implements OnInit {
 
   }
 
-
+  open() {
+    // const modalRef = this.modalService.open(ModalComponent);
+    this.ServicesProvider.open();
+  }
   fn_getbyNiu(){
 	/*this.ServicesProvider.preloaderOn();
     this.ServicesProvider.post(SERVICES.GETBYNIU,  this.parametros,true).then(data=>{

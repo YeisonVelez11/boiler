@@ -5,6 +5,9 @@ import { VARIABLES } from '../config/variables';
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { Validators, FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import {NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from "../pages/modal/modal.component";
+
 //uso
 //import { ServicesProvider } from '../../providers/services';
 
@@ -19,11 +22,17 @@ export class ServicesProvider {
   constructor(
     private http: Http,
     private datePipe: DatePipe,
-    private router : Router
-
+    private router : Router,
+    private modalService: NgbModal
   ) {
 
   }
+
+  open() {
+    // const modalRef = this.modalService.open(ModalComponent);
+    const modalRef = this.modalService.open(ModalComponent);
+    modalRef.componentInstance.title = 'About';
+}
 
 
   //tener en el component
