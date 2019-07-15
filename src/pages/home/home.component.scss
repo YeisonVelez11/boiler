@@ -1,0 +1,42 @@
+.container_image_agent{
+}
+
+.image_agent{
+    width: 25px; 
+    height: 25px;  
+}
+
+.chat-body{
+    margin-top:5px;
+
+    background:white;
+}
+
+
+.esquina_chat:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.chat-body.esquina_chat.esquina_chat_izq:after {
+    border-width: 0px 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+    top: 0;
+    left: -8px;
+}
+
+
+.chat-body.esquina_chat.esquina_chat_der:after {
+    border-width: 0px 0 10px 10px;
+    border-color: transparent transparent transparent #fff;
+    top: 0;
+    right: -8px;
+}
+
+
+hr{
+
+}

@@ -12,6 +12,32 @@ import * as M from "materialize-css/dist/js/materialize";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  aConversacion:any=
+  [
+    {
+      "emisor":"Agente",
+      "mensaje": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam iste voluptatum sit quas. Quibusdam perferendis sint fugit ab voluptate, voluptas doloremque esse assumenda magnam et quisquam itaque suscipit placeat illo?"
+    },
+    {
+      "emisor":"Cliente",
+      "mensaje": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam iste voluptatum sit quas. Quibusdam perferendis sint fugit ab voluptate, voluptas doloremque esse assumenda magnam et quisquam itaque suscipit placeat illo?"
+    },
+    {
+      "emisor":"Agente",
+      "mensaje": "Hola buenas, tardes bienvenido a CHEC"
+    },
+    {
+      "emisor":"Agente",
+      "mensaje": "Hola buenas, tardes bienvenido a CHEC"
+    },
+    {
+      "emisor":"Cliente",
+      "mensaje": "Hola buenas, tardes bienvenido a CHEC"
+    }
+
+
+  ]
+  
   idNiu:any;
   parametros:any=new FormData();
   aDataUser:any;
