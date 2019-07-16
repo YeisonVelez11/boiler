@@ -3,7 +3,7 @@ import  {SERVICES } from '../../config/webservices';
 import  {MESSAGES } from '../../config/messages';
 import { ServicesProvider } from '../../providers/services';
 import * as M from "materialize-css/dist/js/materialize";
-
+import ScrollBooster from 'scrollbooster'
 //import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -62,6 +62,35 @@ export class HomeComponent implements OnInit {
     var instances = M.FloatingActionButton.init(elems);
 
    },1000)
+
+
+      let viewport:any = document.querySelector('.app')
+      let content:any = viewport.querySelector('.app-inner')
+      console.log(content)
+      let scr = new ScrollBooster({
+        viewport: viewport, 
+        content: content, 
+        // textSelection: true,
+        emulateScroll: true,
+        onClick: (data, event)=> {
+          event.preventDefault()
+        },
+        shouldScroll: (data, event) => {
+          if (event.target.tagName == 'BUTTON') {
+            return false
+          } else {
+            return true
+          }
+        },
+        onUpdate: (data)=> {
+          // viewport.scrollLeft = data.position.x
+          // viewport.scrollTop = data.position.y
+          content.style.transform = `translate(
+            ${-data.position.x}px,
+            ${-data.position.y}px
+          )`
+        }
+      })
 
 
   }

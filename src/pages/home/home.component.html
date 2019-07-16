@@ -26,3 +26,26 @@
 		</div>
 	</div>
 </div>
+
+
+    <div class="app">
+      <div class="app-inner">
+			<div class="d-flex m-2" *ngFor="let chat of aConversacion" [ngClass]="chat.emisor=='Cliente'?'':'flex-row-reverse'">
+				<div class="container_image_agent">
+					<img [src]="chat.emisor=='Agente'?'./assets/img/checlogo.jpg':'./assets/img/user2.png'" width="48" height="48" class="rounded-circle  pt-0 mt-0 mx-3" >
+				</div>
+				<div>
+					<div  [ngClass]="chat.emisor=='Cliente'?'esquina_chat_der':'esquina_chat_izq'" class="chat-body esquina_chat rounded  white p-2 mx-2 position-relative sombra ">
+						<div class="header">
+							<strong class="primary-font nunito">{{chat.emisor=='Agente'?'Agente':'Cliente'}}</strong>
+							<!--flex-row-reverse<small class="pull-right text-muted"><i class="fas fa-clock"></i> 12 mins ago</small>-->
+						</div>
+						<hr class="w-100 m-1">
+						<p class="mb-0">
+							{{chat.mensaje}}
+						</p>
+					</div>
+				</div>
+			</div>
+      </div>
+    </div>
